@@ -4,27 +4,19 @@ import 'jquery-typeahead/src/jquery.typeahead';
 
 export default (function () {
 
+    var guestRow = $('li.guest-data');
+    var newGuestRow = guestRow.clone().appendTo('ul.parent-container');
+    guestRow.hide();
+
     $(document).on('click', '#add-row', function() {
-
-        console.log($('li.guest-data').length);
-        console.log($('li.guest-data').is('hidden'));
-
-        if ($('li.guest-data').length === 1 && $('li.guest-data').is('hidden')) {
-            return $('li.guest-data').show();
-        }
-        var cloned = $('li.guest-data:last-child').clone();
-        $('input', cloned).val('');
+        var cloned = guestRow.clone();
         initAutosugest(cloned);
-        cloned.appendTo( "ul" );
+        cloned.appendTo( "ul.parent-container" );
         cloned.show();
     });
 
     $(document).on('click', '.remove-row', function(event) {
         event.preventDefault();
-        var parent = $(this).closest('li');
-        if ($('li.guest-data').length < 2) {
-            return parent.hide();
-        }
         $(this).closest('li').remove();
     });
 
@@ -68,11 +60,10 @@ export default (function () {
             selector: {
                 list: 'typeahead__list mt-0'
             },
-            debug: true
+            debug: false
         });
 
     };
-    initAutosugest();
-
-
+    initAutosugest($('#leader-name'));
+    initAutosugest(newGuestRow);
 })();

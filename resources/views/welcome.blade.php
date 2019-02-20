@@ -12,7 +12,7 @@
                 <form action="/api/save" method="POST">
                     <div class="card">
                         <div class="card-header">Please, fill the form</div>
-                            <ul class="list-group list-group-flush">
+                            <ul class="parent-container list-group list-group-flush">
                                 <li class="list-group-item pb-0 leader-data">
                                     <div class="d-flex">
                                         <div class="p-2 w-75">
@@ -37,9 +37,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+                                                <label for="leader-phone" class="col-sm-2 col-form-label">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input
+                                                            id="leader-phone"
                                                             name="leader-phone"
                                                             class="form-control"
                                                             type="tel"
@@ -62,7 +63,7 @@
                                                         <div class="typeahead__field">
                                                             <div class="typeahead__query">
                                                                 <input
-                                                                        class="js-typeahead-user form-control"
+                                                                        class="js-typeahead-user guest-name form-control"
                                                                         name="guest-names[]"
                                                                         type="search"
                                                                         placeholder="Name"
@@ -78,7 +79,7 @@
                                                 <div class="col-sm-10">
                                                     <input
                                                             name="guest-phones[]"
-                                                            class="form-control phone-input"
+                                                            class="form-control guest-phone phone-input"
                                                             type="tel"
                                                             placeholder="Phone" />
                                                 </div>

@@ -34,6 +34,9 @@ class UsersController extends Controller
         $guests = [];
         for ($i = 0; $i < count($guest_names); $i++)
         {
+            if (!$guest_names[$i]) {
+                continue;
+            }
             $guests[] = [
                 'name' => $guest_names[$i],
                 'phone' => $guest_phones[$i],

@@ -21444,28 +21444,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ((function () {
+  var guestRow = jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data');
+  var newGuestRow = guestRow.clone().appendTo('ul.parent-container');
+  guestRow.hide();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', '#add-row', function () {
-    console.log(jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data').length);
-    console.log(jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data').is('hidden'));
-
-    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data').length === 1 && jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data').is('hidden')) {
-      return jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data').show();
-    }
-
-    var cloned = jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data:last-child').clone();
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('input', cloned).val('');
+    var cloned = guestRow.clone();
     initAutosugest(cloned);
-    cloned.appendTo("ul");
+    cloned.appendTo("ul.parent-container");
     cloned.show();
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', '.remove-row', function (event) {
     event.preventDefault();
-    var parent = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).closest('li');
-
-    if (jquery__WEBPACK_IMPORTED_MODULE_0___default()('li.guest-data').length < 2) {
-      return parent.hide();
-    }
-
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).closest('li').remove();
   });
 
@@ -21510,11 +21499,12 @@ __webpack_require__.r(__webpack_exports__);
       selector: {
         list: 'typeahead__list mt-0'
       },
-      debug: true
+      debug: false
     });
   };
 
-  initAutosugest();
+  initAutosugest(jquery__WEBPACK_IMPORTED_MODULE_0___default()('#leader-name'));
+  initAutosugest(newGuestRow);
 })());
 
 /***/ }),
