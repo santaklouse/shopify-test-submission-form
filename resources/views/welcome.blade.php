@@ -26,7 +26,7 @@
                                                                         id="leader-name"
                                                                         required
                                                                         class="js-typeahead-user form-control"
-                                                                        name="leader"
+                                                                        name="leader-name"
                                                                         type="search"
                                                                         placeholder="Name"
                                                                         autocomplete="off"
@@ -40,7 +40,7 @@
                                                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input
-                                                            name="phone"
+                                                            name="leader-phone"
                                                             class="form-control"
                                                             type="tel"
                                                             required
@@ -56,14 +56,14 @@
                                     <div class="d-flex">
                                         <div class="p-2 w-75">
                                             <div class="form-group row">
-                                                <label for="guest-name" class="col-sm-2 col-form-label">Guest Name</label>
+                                                <label for="guest-names[]" class="col-sm-2 col-form-label">Guest Name</label>
                                                 <div class="col-sm-10 typeahead__container">
                                                     <div class="typeahead__container">
                                                         <div class="typeahead__field">
                                                             <div class="typeahead__query">
                                                                 <input
                                                                         class="js-typeahead-user form-control"
-                                                                        name="guests[]"
+                                                                        name="guest-names[]"
                                                                         type="search"
                                                                         placeholder="Name"
                                                                         autocomplete="off"
@@ -74,7 +74,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+                                                <label for="guest-phones[]" class="col-sm-2 col-form-label">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input
                                                             name="guest-phones[]"
