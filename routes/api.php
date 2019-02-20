@@ -17,6 +17,11 @@ Route::group([
     'middleware' => ['api'],
 ], function () {
 
+    Route::post('save', [
+        'as'         => 'api.save',
+        'uses'       => '\App\Http\Controllers\UsersController@saveAction'
+    ]);
+
     Route::get('customers', [
         'as'         => 'api.customers',
         'uses'       => '\App\Http\Controllers\CustomersController@listAction'

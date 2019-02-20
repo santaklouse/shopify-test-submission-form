@@ -9,7 +9,7 @@
     <body>
         <div class="container">
             <div class="mt-5 justify-content-md-center">
-                <form>
+                <form action="/api/save" method="POST">
                     <div class="card">
                         <div class="card-header">Please, fill the form</div>
                             <ul class="list-group list-group-flush">
@@ -62,9 +62,8 @@
                                                         <div class="typeahead__field">
                                                             <div class="typeahead__query">
                                                                 <input
-                                                                        required
                                                                         class="js-typeahead-user form-control"
-                                                                        name="guest[]"
+                                                                        name="guests[]"
                                                                         type="search"
                                                                         placeholder="Name"
                                                                         autocomplete="off"
@@ -78,10 +77,9 @@
                                                 <label for="phone" class="col-sm-2 col-form-label">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input
-                                                            name="guest-phone[]"
+                                                            name="guest-phones[]"
                                                             class="form-control phone-input"
                                                             type="tel"
-                                                            required
                                                             placeholder="Phone" />
                                                 </div>
                                             </div>

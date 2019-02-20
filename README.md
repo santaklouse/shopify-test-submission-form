@@ -8,6 +8,12 @@ composer install
 npm install
 ```
 
+- Create DB and tables
+```
+php artisan db:create
+php artisan migrate
+```
+
 - Run
 ```
 php artisan serve
